@@ -10,6 +10,9 @@ import Home from './Pages/Home/Home.jsx';
 import Login from './Pages/Login/Login.jsx';
 import SignUp from './Pages/SignUp/SignUp.jsx';
 import AuthProvider from './Providers/AuthProvider.jsx';
+import CheckOut from './Pages/Shared/CheckOut.jsx';
+import Bookings from './Pages/Bookings/Bookings.jsx';
+import PrivateRoute from './PrivateRoute/PrivateRoute.jsx';
 
 
 const router = createBrowserRouter([
@@ -28,6 +31,15 @@ const router = createBrowserRouter([
       {
         path:"/signUp",
         element:<SignUp></SignUp>
+      },
+      {
+        path:"/checkOut/:id",
+        element:<CheckOut></CheckOut>,
+        loader: ({params})=> fetch(`http://localhost:5000/checkOut/${params.id}`)
+      },
+      {
+        path:"/bookings",
+        element:<PrivateRoute><Bookings></Bookings></PrivateRoute>
       },
     ]
   },

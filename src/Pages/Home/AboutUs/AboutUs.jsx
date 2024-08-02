@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutUs = () => {
     return (
-        <div className="hero text-black min-h-screen">
+        <div id='aboutUs' className="hero text-black min-h-screen">
             <div className="hero-content grid grid-cols-1 md:grid-cols-2">
                 <div className=' relative'>
                     <img
